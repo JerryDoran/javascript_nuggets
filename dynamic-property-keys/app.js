@@ -8,22 +8,24 @@ console.log(person);
 
 // square bracket notation
 const items = {
-  'featured-items': ['item-1', 'item-2'],
+  'featured-items': ['item1', 'item2'],
 };
+
 console.log(items['featured-items']);
 console.log(person['name']);
 
 let appState = 'loading';
-appState = 'error';
-
 const keyName = 'computer';
 
-const product = {
+const app = {
   [appState]: true,
 };
 
-product[keyName] = 'apple';
-console.log(product);
+app[keyName] = 'apple';
+
+console.log(app);
+
+// Example
 
 const state = {
   loading: true,
@@ -38,7 +40,6 @@ function updateState(key, value) {
 updateState('name', 'john');
 updateState('job', 'developer');
 updateState('loading', false);
-
 updateState('products', []);
-updateState('name', 'peter');
+
 console.log(state);
