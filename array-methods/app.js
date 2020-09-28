@@ -1,10 +1,12 @@
 const people = [
-  { name: 'bob', age: 20, position: 'developer' },
-  { name: 'peter', age: 25, position: 'designer' },
-  { name: 'sue', age: 30, position: 'manager' },
-  { name: 'natasha', age: 35, position: 'intern' },
-  { name: 'steve', age: 100, position: 'developer' },
+  { name: 'bob', age: 20, position: 'developer', salary: 100 },
+  { name: 'peter', age: 25, position: 'designer', salary: 300 },
+  { name: 'sue', age: 30, position: 'manager', salary: 400 },
+  { name: 'natasha', age: 35, position: 'intern', salary: 50 },
+  { name: 'steve', age: 100, position: 'developer', salary: 600 },
 ];
+
+// ****************************** Filter Method **********************************
 
 // Filter people less than or equal to 25
 const youngPeople = people.filter((person) => person.age <= 25);
@@ -25,3 +27,12 @@ console.log(peter);
 // if we have no matches with find we will get undefined back
 const tony = people.find((person) => person.name === 'tony');
 console.log(tony);
+
+// ****************************** Reduce Method **********************************
+
+const dailyTotal = people.reduce((total, person) => {
+  total += person.salary;
+  return total;
+}, 0);
+
+console.log(dailyTotal);
